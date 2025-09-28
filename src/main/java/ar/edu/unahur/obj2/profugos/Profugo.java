@@ -1,55 +1,55 @@
 package ar.edu.unahur.obj2.profugos;
 
 public class Profugo implements IProfugo{
-
     private Integer inociencia;
     private Integer habilidad;
     private Boolean esNervioso;
-
-    /*Un nivel de habilidad es un valor entre 1 y 100 que determina la capacidad de evadir la captura. */
-
-    public Profugo(Integer inociencia, Integer habilidad) {
-        if(habilidad < 1 || habilidad > 100) {
-            throw new IllegalArgumentException("La habilidad debe estar entre 1 y 100");
-        }
+    public Profugo(Integer inociencia, Integer habilidad, Boolean esNervioso) {
         this.inociencia = inociencia;
-        this.habilidad = habilidad;
-        this.esNervioso = false;
+        if(habilidad >= 0 && habilidad <= 100){
+            this.habilidad = habilidad;
+        }else{
+            throw new RuntimeException("la habilidad es un valor del 0 al 100");
+        }
+        this.esNervioso = esNervioso;
     }
-
     @Override
     public Integer getInociencia() {
-        return this.inociencia;
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getInociencia'");
     }
-
     @Override
     public Integer getHabilidad() {
-        return this.habilidad;
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getHabilidad'");
     }
-
     @Override
     public Boolean esNervioso() {
-        return this.esNervioso;
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'esNervioso'");
     }
-
     @Override
     public void volverseNervioso() {
-        this.esNervioso = true;
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'volverseNervioso'");
     }
-
     @Override
     public void dejarDeEstarNervioso() {
-        this.esNervioso = false;
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'dejarDeEstarNervioso'");
     }
-
     @Override
     public void reducirHabilidad(Integer valor) {
-        this.habilidad -= Math.max(0, this.habilidad - valor);
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'reducirHabilidad'");
     }
-
     @Override
     public void disminuirInociencia(Integer valor) {
-        this.inociencia -= Math.max(0, this.inociencia - valor);
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'disminuirInociencia'");
     }
+
+    
+
     
 }

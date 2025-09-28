@@ -8,55 +8,21 @@ import ar.edu.unahur.obj2.zonas.Zona;
 
 public abstract class Cazador {
     private Integer experiencia;
-    private final List<IProfugo> profugosCapturados = new ArrayList<>();
-    private final List<IProfugo> profugosIntimidados = new ArrayList<>();
+    private List<IProfugo> profugosCapturados = new ArrayList<>();
 
-    public Cazador(Integer experiencia) {
-        this.experiencia = experiencia;
-    }
 
-    public Integer getExperiencia() {
-        return experiencia;
-    }
-
-    public Boolean puedeCapturar(IProfugo profugo) {
-        return this.getExperiencia() > profugo.getInociencia() && this.doPuedeCapturar(profugo);
-    }
-
-    protected abstract Boolean doPuedeCapturar(IProfugo profugo);
-
-    public void intimidar(IProfugo profugo){
-        profugo.disminuirInociencia(2);
-        this.doIntimidar(profugo);
-        this.profugosIntimidados.add(profugo);
-    }
-
-    public void capturar(IProfugo profugo){
+    public void cazar(IProfugo profugo){
         if(this.puedeCapturar(profugo)){
-            this.profugosCapturados.add(profugo);
-            this.aumentarExperiencia();
+            profugosCapturados.add(profugo);
         }else{
             this.intimidar(profugo);
         }
     }
 
-    private void aumentarExperiencia(){
-        Integer habilidadDeIntimidados = profugosIntimidados.stream()
-            .mapToInt(p -> p.getHabilidad()).sum();
-        Integer cantidadProfugosCapturados = profugosCapturados.size();
-        experiencia += habilidadDeIntimidados 
-            + (2 * cantidadProfugosCapturados);
+    public Boolean puedeCapturar(IProfugo profugo){
+        return experiencia > profugo.getInociencia() && this.doPuedeCapturar(profugo);
     }
 
-    protected abstract void doIntimidar(IProfugo profugo);
-
-    public void realizarCaptura(Zona zona){
-        zona.getProfugos().stream().forEach(p -> this.capturar(p));
-    }
-
-    public List<IProfugo> getProfugosCapturados() {
-        return profugosCapturados;
-    }
-
+    protected abstract Boolean doPuedeCapturar(IProfugo profugo);
 
 }
