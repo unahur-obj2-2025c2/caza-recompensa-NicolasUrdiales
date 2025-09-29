@@ -15,32 +15,32 @@ public class ArtesMarcialesAvanzadas extends Entrenamiento{
 
     @Override
     public Integer getHabilidad() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return Integer.min(profugo.getHabilidad() * 2, 100);
     }
 
     @Override
     public Boolean esNervioso() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return profugo.esNervioso();
     }
 
     @Override
     public void volverseNervioso() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        profugo.volverseNervioso();
     }
 
     @Override
     public void dejarDeEstarNervioso() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        profugo.dejarDeEstarNervioso();
     }
 
     @Override
     public void reducirHabilidad(Integer valor) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        profugo.reducirHabilidad(valor);
     }
 
     @Override
     public void disminuirInociencia(Integer valor) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        profugo.disminuirInociencia(valor);
     }
 
     
