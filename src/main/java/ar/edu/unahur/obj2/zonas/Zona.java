@@ -9,4 +9,9 @@ public class Zona {
     public List<IProfugo> getProfugos() {
         return profugos;
     }
+    
+
+    public void eliminarProfugo(IProfugo profugo){
+        profugos.remove(profugo);
+    }
 }

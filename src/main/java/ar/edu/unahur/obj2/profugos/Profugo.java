@@ -15,38 +15,31 @@ public class Profugo implements IProfugo{
     }
     @Override
     public Integer getInociencia() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getInociencia'");
+        return inociencia;
     }
     @Override
     public Integer getHabilidad() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getHabilidad'");
+        return habilidad;
     }
     @Override
     public Boolean esNervioso() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'esNervioso'");
+        return esNervioso;
     }
     @Override
     public void volverseNervioso() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'volverseNervioso'");
+        esNervioso = Boolean.TRUE;
     }
     @Override
     public void dejarDeEstarNervioso() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'dejarDeEstarNervioso'");
+        esNervioso = Boolean.FALSE;
     }
     @Override
     public void reducirHabilidad(Integer valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'reducirHabilidad'");
+        habilidad = Integer.max(0, habilidad - valor);
     }
     @Override
     public void disminuirInociencia(Integer valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'disminuirInociencia'");
+        inociencia = Integer.max(0, inociencia - valor);
     }
 
     
